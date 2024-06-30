@@ -1,0 +1,9 @@
+http://localhost/stage-fullstack-PDO/src/accueil.php
+http://localhost/stage-fullstack-PDO/src/bilangeneral.php
+http://localhost/stage-fullstack-PDO/src/bilanindividuel.php
+http://localhost/stage-fullstack-PDO/src/bilanjournalier.php
+http://localhost/stage-fullstack-PDO/src/chefdegarage/accueilcg.php
+http://localhost/stage-fullstack-PDO/src/chefdegarage/infocg.php
+http://localhost/stage-fullstack-PDO/src/chefdeservice/accueilcs.php
+http://localhost/stage-fullstack-PDO/src/employedeservice/infoes.php
+http://localhost/stage-fullstack-PDO/src/employedeservice/service.php
