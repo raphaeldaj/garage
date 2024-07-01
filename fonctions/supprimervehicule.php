@@ -5,6 +5,7 @@ function suprimerVehicule($immatriculation) {
    $user = "root"; 
    $passwd = ""; 
    $bdd = "stage";
+   
 
    try {
        $conn = new PDO("mysql:host=$host;dbname=$bdd", $user, $passwd);
