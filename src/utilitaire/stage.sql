@@ -122,6 +122,81 @@ CREATE TABLE JOURNEE(
     CONSTRAINT pk_VEH PRIMARY KEY(immatriculation)
 );
 
+cree moi les utilisateurs administrateurGarage , chefDeGarage , chefDeService et employeDeService avec eux tous ayant pour mot de passe "passer"
+
+administrateurGarage pourra 
+lire les tables : STATISTIQUES RAPPORT et DAILYSTATS et 
+ecrire sur les tables : VEHICULE CHAUFFEUR EMPLOYE STATISTIQUES
+mettre a jour les tables : STATISTIQUES 
+
+chefDeGarage  pourra 
+lire les tables : VEHICULE CHAUFFEUR
+ecrire sur les tables : JOURNEE ,RAPPORT
+mettre a jour les tables : EMPLOYE
+
+chefDeService  pourra 
+lire les tables : JOURNEE
+ecrire sur les tables :  DAILYSTATS , RAPPORT 
+mettre a jour les tables : RAPPORT , EMPLOYE
+
+employeDeService  pourra 
+lire les tables : JOURNEE
+ecrire sur les tables :  DAILYSTATS , RAPPORT 
+mettre a jour les tables : RAPPORT , EMPLOYE
+
+
+
+-- CREATION D4UTILISATERU ET ATTRIBUTION DES DROIT
+
+CREATE USER 'administrateurGarage'@'localhost' IDENTIFIED BY 'passer';
+
+GRANT SELECT ON STAGE.STATISTIQUES TO 'administrateurGarage'@'localhost';
+GRANT SELECT ON STAGE.RAPPORT TO 'administrateurGarage'@'localhost';
+GRANT SELECT ON STAGE.DAILYSTATS TO 'administrateurGarage'@'localhost';
+
+GRANT INSERT ON STAGE.VEHICULE TO 'administrateurGarage'@'localhost';
+GRANT INSERT ON STAGE.CHAUFFEUR TO 'administrateurGarage'@'localhost';
+GRANT INSERT ON STAGE.EMPLOYE TO 'administrateurGarage'@'localhost';
+GRANT INSERT ON STAGE.STATISTIQUES TO 'administrateurGarage'@'localhost';
+
+GRANT UPDATE ON STAGE.STATISTIQUES TO 'administrateurGarage'@'localhost';
+
+
+
+CREATE USER 'chefDeGarage'@'localhost' IDENTIFIED BY 'passer';
+
+GRANT SELECT ON STAGE.VEHICULE TO 'chefDeGarage'@'localhost';
+GRANT SELECT ON STAGE.CHAUFFEUR TO 'chefDeGarage'@'localhost';
+
+GRANT INSERT ON STAGE.JOURNEE TO 'chefDeGarage'@'localhost';
+GRANT INSERT ON STAGE.RAPPORT TO 'chefDeGarage'@'localhost';
+
+GRANT UPDATE ON STAGE.EMPLOYE TO 'chefDeGarage'@'localhost'
+
+
+
+CREATE USER 'chefDeService'@'localhost' IDENTIFIED BY 'passer';
+
+GRANT SELECT ON STAGE.JOURNEE TO 'chefDeService'@'localhost';
+
+GRANT INSERT ON STAGE.DAILYSTATS TO 'chefDeService'@'localhost';
+GRANT INSERT ON STAGE.RAPPORT TO 'chefDeService'@'localhost';
+
+GRANT UPDATE ON STAGE.RAPPORT TO 'chefDeService'@'localhost';
+GRANT UPDATE ON STAGE.EMPLOYE TO 'chefDeService'@'localhost';
+
+
+
+CREATE USER 'employeDeService'@'localhost' IDENTIFIED BY 'passer';
+
+GRANT SELECT ON STAGE.JOURNEE TO 'employeDeService'@'localhost';
+
+GRANT INSERT ON STAGE.DAILYSTATS TO 'employeDeService'@'localhost';
+GRANT INSERT ON STAGE.RAPPORT TO 'employeDeService'@'localhost';
+
+GRANT UPDATE ON STAGE.RAPPORT TO 'employeDeService'@'localhost';
+GRANT UPDATE ON STAGE.EMPLOYE TO 'employeDeService'@'localhost';
+
 
 -- PHASE TEST - DONNEES FACULTATIFS
 
@@ -145,3 +220,4 @@ INSERT INTO `employe`  VALUES ('0000000002', 'Ousamane', 'SOW', 'ousmanesouw@emp
 INSERT INTO `employe`  VALUES ('0000000003', 'Mamadou', 'SOW', 'mamadousow@employe.com', '+221 79 444 55 66', 'somewhere', 'diagnostique Et Electronique', 'Employe de Service', 'mamadou', 'passer');
 INSERT INTO `employe`  VALUES ('0000000004', 'Rassoul', 'NAME', 'rassoulname@employe.com', '+221 79 444 55 66', 'somewhere', 'carrosserie Et Peinture', 'Employe de Service', 'rassoul', 'passer');
 INSERT INTO `employe`  VALUES ('0000000005', 'Elimane', 'KA', 'elimaneka@employe.com', '+221 79 444 55 66', 'somewhere', 'entretien Et Maintenance', 'Employe de Service', 'elimane', 'passer');
+
