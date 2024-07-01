@@ -166,11 +166,10 @@ require '../fonctions/message.php';
           <button id="add-active" style="width: 30px;height: 30px;border-radius: 15px;left: 5px;position: relative;top: 5px;"></button>
           <button id="add-auto"   style="width: 30px;height: 30px;border-radius: 15px;left: 150px;position: relative;top: 5px;background-image : url('../pictures/add-auto-icon.jpeg');background-size : cover;"></button>
           <button id="add-empl"   style="width: 30px;height: 30px;border-radius: 15px;left: 150px;position: relative;top: 5px;background-image : url('../pictures/add-empl-icon.jpeg');background-size : cover;"></button>
-          <button id="add-chauf"  style="width: 30px;height: 30px;border-radius: 15px;left: 5px;position: relative;top: 5px;background-image : url('../pictures/add-empl-icon.jpeg');background-size : cover;"></button>
+          <button id="add-chauf"  style="width: 30px;height: 30px;border-radius: 15px;left: 150px;position: relative;top: 5px;background-image : url('../pictures/add-empl-icon.jpeg');background-size : cover;"></button>
         </div>
         
         <script src="../script/bilangeneral.js"></script>
-        
 </body>
 
 
