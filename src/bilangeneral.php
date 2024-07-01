@@ -8,25 +8,6 @@ require '../fonctions/message.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STATISTIQUES</title>
     <link rel="stylesheet" href="../style/bilangeneral.css">
-    <style>
-      .kilometrage{
-    width: 20%;
-    position: absolute;
-    top: 68%;
-    left: 5%;
-  }
-  .select {
-    background: rgba(255, 255, 255, 0);
-    border: none;
-    padding: 15px 20px;
-    border-radius: 20px;
-    margin-top: 15px;
-    box-shadow: #cff0ff 0px 10px 10px -5px;
-    border-inline: 2px solid transparent;
-    /* position: absolute; */
-    text-align: left;
-  }
-    </style>
 </head>
 <body>
 
@@ -103,6 +84,40 @@ require '../fonctions/message.php';
         </div>
 
 
+
+        <div id="add-chauf-form" style="width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.638);position: fixed;top: 0px;left: 150%;display: flex;justify-content: space-around;">
+
+          <div class="permis-container" style="top : 150px;">
+              <div class="heading"> PERMIS DE CONDUIRE </div>
+              <div action="rapport.php" class="div">
+                  <div style="width: 20%;position: absolute;top: 12%;left: 5%;"><p>N° Permis</p></div>
+                  <input class="N°immatriculation"            type="text" name="numeroPermis"              placeholder="N° Permis"                 value="" >
+                  <div style="width: 30%;position: absolute;top: 12%;left: 35%;"><p>date d'Emission</p></div>
+                  <input class="date-1er-mise-en-circulation" type="text" name="dateEmission"              placeholder="date d'Emission"           value="" >
+                  <div style="width: 25%;position: absolute;top: 12%;left: 67%;"><p>date d'Expiration</p></div>
+                  <input class="date-immatriculation"         type="text" name="dateExpiration"            placeholder="date d'Expiration"         value="" >
+                  <div style="width: 20%;position: absolute;top: 27%;left: 5%;"><p>Nom</p></div>
+                  <input class="N°titulaire"                  type="text" name="nomChauffeur"              placeholder="Nom"                       value="" >
+                  <div style="width: 40%;position: absolute;top: 27%;left: 35%;"><p>Prenom</p></div>
+                  <input class="titulaire"                    type="text" name="prenomChauffeur"           placeholder="Prenom"                    value="" >
+                  <div style="width: 30%;position: absolute;top: 42%;left: 5%;"><p>date de Naissance</p></div>
+                  <input class="N°immat-precedante"           type="text" name="immatriculationPrecedente" placeholder="date de Naissance"         value="" >
+                  <div style="width: 30%;position: absolute;top: 42%;left: 45%;"><p>lieu de Naissance</p></div>
+                  <input class="adresse-commune"              type="text" name="dateNaissance"             placeholder="lieu de Naissance"         value="" >
+                  <div style="width: 30%;position: absolute;top: 60%;left: 5%;"><p>delivre par</p></div>
+                  <input class="kilometrage"                  type="text" name="delivrePar"                placeholder="delivre Par"               value="" >
+                  <div style="width: 30%;position: absolute;top: 60%;left: 35%;"><p>groupe sanguin</p></div>
+                  <input class="region-departement"           type="text" name="groupeSanguin"             placeholder="groupe sanguin"            value="" >
+                  <div style="width: 10%;position: absolute;top: 60%;left: 65%;"><p>cathegorie</p></div>
+                  <input class="origine"                      type="text" name="cathegorie"                placeholder="cathegorie"                value=""  style="top :68% ;">
+                  <input type="submit" value="enregistrer" style="width: 100px;bottom: 3%;left: 5%;text-align: center;" class="traiter">
+              </div>
+          </div>
+
+        </div>
+
+
+
         <div id="add-empl-form" style="width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.638);position: fixed;top: 0px;left: 150%;display: flex;justify-content: space-around;">
 
           <div class="carte-perso-container" style="top: 25px;border-radius: 40px; align-items: center;background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(244, 247, 251) 100%);height: 600px;">
@@ -149,8 +164,9 @@ require '../fonctions/message.php';
 
         <div id="add" style="position: fixed;width: 40px;background-color: #0099ff;border-radius: 20px;right: 10px;top: 15px;height:40px; ">
           <button id="add-active" style="width: 30px;height: 30px;border-radius: 15px;left: 5px;position: relative;top: 5px;"></button>
-          <button id="add-auto" style="width: 30px;height: 30px;border-radius: 15px;left: 150px;position: relative;top: 5px;background-image : url('../pictures/add-auto-icon.jpeg');background-size : cover;"></button>
-          <button id="add-empl" style="width: 30px;height: 30px;border-radius: 15px;left: 150px;position: relative;top: 5px;background-image : url('../pictures/add-empl-icon.jpeg');background-size : cover;"></button>
+          <button id="add-auto"   style="width: 30px;height: 30px;border-radius: 15px;left: 150px;position: relative;top: 5px;background-image : url('../pictures/add-auto-icon.jpeg');background-size : cover;"></button>
+          <button id="add-empl"   style="width: 30px;height: 30px;border-radius: 15px;left: 150px;position: relative;top: 5px;background-image : url('../pictures/add-empl-icon.jpeg');background-size : cover;"></button>
+          <button id="add-chauf"  style="width: 30px;height: 30px;border-radius: 15px;left: 5px;position: relative;top: 5px;background-image : url('../pictures/add-empl-icon.jpeg');background-size : cover;"></button>
         </div>
         
         <script src="../script/bilangeneral.js"></script>
