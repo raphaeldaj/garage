@@ -35,104 +35,13 @@ require '../../fonctions/message.php';
                 <div class="vitre"></div>
             </div>
 
-            <!-- <input class="valid-button"         type="submit" name="etat" value="Rien A Signaler"  style="width: 35%;position: absolute;bottom: -15%;left: 10%;text-align: center;">
-            <input class="invalid-button"       type="submit" name="etat" value="Prendre En Charge" style="width: 35%;position: absolute;bottom: -15%;right: 10%;text-align: center;"> -->
+            
 
         </form>
         
     </div>
 
     
-    <!-- <div class="historique">
-      <div class="heading">historique</div>
-      <section>
-
-        <div>
-          <table>
-            <tr>
-              <td>date</td>
-              <td>N° Permi</td>
-              <td>idEmploye</td>
-              <td style="background-color: rgb(255, 0, 0);">service</td>
-              <td>service</td>
-              <td>service</td>
-              <td>service</td>
-              <td>service</td>
-              <td>service</td>
-              <td>service</td>
-              <td>service</td>
-              <td>service</td>
-              <td>prix</td>
-            </tr>
-          </table>
-        </div>
-
-        <div>
-          <table>
-            <tr>
-              <td>date</td>
-              <td>N° Permi</td>
-              <td>idEmploye</td>
-              <td>service</td>
-              <td>service</td>
-              <td>service</td>
-              <td>service</td>
-              <td>service</td>
-              <td>service</td>
-              <td>service</td>
-              <td>service</td>
-              <td>service</td>
-              <td>prix</td>
-            </tr>
-          </table>
-        </div>
-
-
-        <div>
-          <table>
-            <tr>
-              <td>date</td>
-              <td>N° Permi</td>
-              <td>idEmploye</td>
-              <td style="background-color: rgb(255, 0, 0);">service</td>
-              <td>service</td>
-              <td>service</td>
-              <td>service</td>
-              <td style="background-color: rgb(255, 0, 0);">service</td>
-              <td>service</td>
-              <td style="background-color: rgb(255, 0, 0);">service</td>
-              <td>service</td>
-              <td>service</td>
-              <td>prix</td>
-            </tr>
-          </table>
-        </div>
-
-        <div class="heading">bilan</div>
-
-        <div>
-          <table>
-            <tr>
-              <td>date</td>
-              <td>N° Permi</td>
-              <td>%service</td>
-              <td>%service</td>
-              <td>%service</td>
-              <td>%service</td>
-              <td>%service</td>
-              <td>%service</td>
-              <td>%service</td>
-              <td>%service</td>
-              <td>%service</td>
-              <td>%service</td>
-              <td>total</td>
-            </tr>
-          </table>
-        </div>
-
-
-      </section>
-    </div> -->
 
 </body>
 
