@@ -102,5 +102,4 @@ include "../../fonctions/enregistrerPiece.php";
                     echo "Erreur : " . $e->getMessage();
                 }
             }
-
 ?>
