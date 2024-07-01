@@ -4,8 +4,8 @@ USE STAGE;
 
 CREATE TABLE VEHICULE(
     immatriculation VARCHAR(10) NOT NULL,
-    premiereMiseEnCirculation DATE NOT NULL,
-    dateImmatriculation DATE NOT NULL,
+    premiereMiseEnCirculation VARCHAR(10) NOT NULL,
+    dateImmatriculation VARCHAR(10) NOT NULL,
     numeroTitulaire VARCHAR(20) NOT NULL,
     titulaire VARCHAR(100) NOT NULL,
     immatriculationPrecedente VARCHAR(10),
@@ -23,10 +23,10 @@ CREATE TABLE CHAUFFEUR(
     numeroPermis VARCHAR(10) NOT NULL,
     nom VARCHAR(15) NOT NULL,
     prenom VARCHAR(50) NOT NULL,
-    dateNaissance DATE NOT NULL,
+    dateNaissance VARCHAR(10) NOT NULL,
     lieuNaissance VARCHAR(50) NOT NULL,
-    dateEmission DATE NOT NULL,
-    dateExpiration DATE NOT NULL,
+    dateEmission VARCHAR(10) NOT NULL,
+    dateExpiration VARCHAR(10) NOT NULL,
     delivrePar VARCHAR(20) NOT NULL,
     categorie ENUM('A1', 'A', 'B', 'C1', 'C', 'D', 'BE', 'C1E','CE','DE') NOT NULL,
     groupeSanguin ENUM('A+', 'B+', 'AB+', 'O+', 'A-', 'B-', 'AB-', 'O-') NOT NULL,
@@ -59,7 +59,7 @@ CREATE TABLE STATISTIQUES(
     accessoireEtPersonnalisation BOOLEAN NOT NULL,
     assistanceRoutiere BOOLEAN NOT NULL,
     controleTechnique BOOLEAN NOT NULL,
-    moyenne DECIMAL(10,4),
+    moyenne DECIMAL(4,2),
     appreciation VARCHAR(20),
     CONSTRAINT pk_STAT PRIMARY KEY(idStatistique),
     CONSTRAINT fk_STAT_immatriculation FOREIGN KEY(immatriculation) REFERENCES VEHICULE(immatriculation) ON DELETE CASCADE
@@ -79,8 +79,8 @@ CREATE TABLE RAPPORT(
     accessoireEtPersonnalisation BOOLEAN NOT NULL,
     assistanceRoutiere BOOLEAN NOT NULL,
     controleTechnique BOOLEAN NOT NULL,
-    date DATE NOT NULL,
-    montant DECIMAL(10,3) NOT NULL,
+    date VARCHAR(10) NOT NULL,
+    montant DECIMAL(11,2) NOT NULL,
     CONSTRAINT pk_RAP PRIMARY KEY(idRapport),
     CONSTRAINT fk_RAP_immatriculation FOREIGN KEY(immatriculation) REFERENCES VEHICULE(immatriculation) ON DELETE CASCADE,
     CONSTRAINT fk_RAP_numeroPermis FOREIGN KEY(numeroPermis) REFERENCES CHAUFFEUR(numeroPermis) ON DELETE CASCADE,
@@ -95,8 +95,8 @@ CREATE TABLE DAILYSTATS(
     immatriculation VARCHAR(10) NOT NULL,
     piece VARCHAR(100) NOT NULL,
     prix DECIMAL(10, 2) NOT NULL,
-    date DATE NOT NULL,
-    service ENUM('Entretien Et Maintenance', 'Reparation Mecanique', 'Diagnostique Et Electronique', 'Pneumatiques', 'Carrosserie Et Peinture', 'Climatisation', 'Accessoire Et Personnalisation', 'Assistance Routiere', 'Controle Technique','administration') NOT NULL,
+    date VARCHAR(10) NOT NULL,
+    service ENUM('entretien Et Maintenance', 'reparation Mecanique', 'diagnostique Et Electronique', 'pneumatiques', 'carrosserie Et Peinture', 'climatisation', 'accessoire Et Personnalisation', 'assistance Routiere', 'controle Technique','administration') NOT NULL,
     CONSTRAINT pk_DAILYSTATS PRIMARY KEY(idStatistique),
     CONSTRAINT fk_DAILYSTATS_immatriculation FOREIGN KEY(immatriculation) REFERENCES VEHICULE(immatriculation) ON DELETE CASCADE,
     CONSTRAINT fk_DAILYSTATS_idEmploye FOREIGN KEY(idEmploye) REFERENCES EMPLOYE(idEmploye) ON DELETE CASCADE,
@@ -104,8 +104,8 @@ CREATE TABLE DAILYSTATS(
 
 CREATE TABLE JOURNEE(
     immatriculation VARCHAR(10) NOT NULL,
-    premiereMiseEnCirculation DATE NOT NULL,
-    dateImmatriculation DATE NOT NULL,
+    premiereMiseEnCirculation VARCHAR(10) NOT NULL,
+    dateImmatriculation VARCHAR(10) NOT NULL,
     numeroTitulaire VARCHAR(20) NOT NULL,
     titulaire VARCHAR(100) NOT NULL,
     immatriculationPrecedente VARCHAR(10),
@@ -116,14 +116,32 @@ CREATE TABLE JOURNEE(
     origine VARCHAR(50) NOT NULL,
     anneeFabrication YEAR NOT NULL,
     kilometrage INT NOT NULL,
+    date DATE NOT NULL,
+    clefPrimaire VARCHAR(10) NOT NULL,
+    numeroPermis VARCHAR(10) NOT NULL,
     CONSTRAINT pk_VEH PRIMARY KEY(immatriculation)
 );
 
 
-INSERT INTO chauffeur VALUES ('11078352','DIOP','Jacques Raphael Amar','07-07-2003','THIES','22-12-2023','21-12-2033','MITTD','B','A+');
-INSERT INTO chauffeur VALUES ('12345678','DIALLO','ALIOUNE','2004-01-01','quelque part','22-12-2022','21-12-2032','MITTD','B','AB+');
-INSERT INTO chauffeur VALUES ('98765432','SOW','OUSMANE','2004-01-01','quelque part','22-12-2022','21-12-2032','MITTD','B','B+');
+-- PHASE TEST - DONNEES FACULTATIFS
 
-INSERT INTO vehicule VALUES ('BB-947-RM','2002-14-10','2023-19-12','2000789463','raphael','UI-2249-D','quelque part','quelque part','Toyota','Avensis','Dakar Port Nord','2007',0);
-INSERT INTO vehicule VALUES ('BB-947-RM','2002-14-10','2023-19-12','2000789463','raphael','UI-2249-D','quelque part','quelque part','Toyota','Avensis','Dakar Port Nord','2007',0);
-INSERT INTO vehicule VALUES ('BB-947-RM','2002-14-10','2023-19-12','2000789463','raphael','UI-2249-D','quelque part','quelque part','Toyota','Avensis','Dakar Port Nord','2007',0);
+
+INSERT INTO chauffeur VALUES ('0000000000','DIOP','Raphael','00-00-2000','quelque part','01-01-2001','02-02-2002','MITTD','B','A+');
+INSERT INTO chauffeur VALUES ('0000000001','DIALLO','Alioune','00-00-2000','quelque part','01-01-2001','02-02-2002','MITTD','B','AB+');
+INSERT INTO chauffeur VALUES ('0000000002','SOW','Ousmane','00-00-2000','quelque part','01-01-2001','02-02-2002','MITTD','B','B+');
+
+
+INSERT INTO vehicule VALUES ('AA-947-ZZ','14-10-2002','05-07-2002','2000789463','Ndonguo FALL','UI-2249-D','quelque part','quelque part','Toyota','Avensis','Dakar','2007',37);
+INSERT INTO vehicule VALUES ('BB-947-YY','04-10-2002','15-08-2002','2150789463','Ndonguo FALL','VJ-2249-E','quelque part','quelque part','Toyota','Avensis','Dakar','2007',45);
+INSERT INTO vehicule VALUES ('CC-947-XX','20-10-2002','28-09-2002','2007689463','Ndonguo FALL','WK-2249-F','quelque part','quelque part','Toyota','Avensis','Dakar','2007',20);
+INSERT INTO vehicule VALUES ('DD-947-WW','24-10-2002','20-09-2002','2091689463','Ndonguo FALL','XL-2249-G','quelque part','quelque part','Toyota','Avensis','Dakar','2007',18);
+INSERT INTO vehicule VALUES ('EE-947-VV','21-10-2002','18-08-2002','2091726463','Ndonguo FALL','YM-2249-H','quelque part','quelque part','Toyota','Avensis','Dakar','2007',50);
+INSERT INTO vehicule VALUES ('FF-947-UU','30-10-2002','12-07-2002','2091179463','Ndonguo FALL','ZN-2249-I','quelque part','quelque part','Toyota','Avensis','Dakar','2007',12);
+
+
+INSERT INTO `employe`  VALUES ('0000000000', 'Raphael', 'DIOP', 'raphaeldiop@employe.com', '+221 79 444 55 66', 'somewhere', 'administration', 'administrateur', 'raphael', 'passer');
+INSERT INTO `employe`  VALUES ('0000000001', 'Alioune', 'DIALLO', 'aliounediallo@employe.com', '+221 79 444 55 66', 'somewhere', 'administration', 'Chef de Garage', 'alioune', 'passer');
+INSERT INTO `employe`  VALUES ('0000000002', 'Ousamane', 'SOW', 'ousmanesouw@employe.com', '+221 79 444 55 66', 'somewhere', 'reparation Mecanique', 'Chef de Service', 'ousmane', 'passer');
+INSERT INTO `employe`  VALUES ('0000000003', 'Mamadou', 'SOW', 'mamadousow@employe.com', '+221 79 444 55 66', 'somewhere', 'diagnostique Et Electronique', 'Employe de Service', 'mamadou', 'passer');
+INSERT INTO `employe`  VALUES ('0000000004', 'Rassoul', 'NAME', 'rassoulname@employe.com', '+221 79 444 55 66', 'somewhere', 'carrosserie Et Peinture', 'Employe de Service', 'rassoul', 'passer');
+INSERT INTO `employe`  VALUES ('0000000005', 'Elimane', 'KA', 'elimaneka@employe.com', '+221 79 444 55 66', 'somewhere', 'entretien Et Maintenance', 'Employe de Service', 'elimane', 'passer');
