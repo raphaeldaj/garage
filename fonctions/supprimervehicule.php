@@ -24,6 +24,7 @@ function suprimerVehicule($immatriculation) {
        } else {
            message("ce vehicule n'est pas enregistre verifier les informations entrees");
        }
+    //    header("Location: http://localhost/GARAGE/src/gestiondesdonnees.php");
    } catch (PDOException $e) {
     message("Erreur : " . $e->getMessage());
    }

@@ -41,7 +41,7 @@ try {
                 <h1><?php echo htmlspecialchars($rowBilanJournalierEmploye[2]); ?></h1>
             </div>
             <div class="employe_infos" style="width: 20%;">
-                <h1><?php echo htmlspecialchars($_REQUEST['service']); ?></h1>
+                <h1><?php echo htmlspecialchars($rowBilanJournalierEmploye[8]); ?></h1>
             </div>
             <div class="employe_infos" style="width: 40%; text-align: right;">
                 <h1><?php echo $_REQUEST['DATE']; ?></h1>

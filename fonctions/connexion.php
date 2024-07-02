@@ -25,13 +25,13 @@ function connexion($loggin, $mot_de_passe) {
                 $_SESSION['id'] = $rowConnexion[0];
 
                 if ($rowConnexion[7] == "Chef de Garage") {
-                    header("Location: http://localhost/stage-fullstack-PDO/src/chefdegarage/accueilcg.php");
+                    header("Location: http://localhost/GARAGE/src/chefdegarage/accueilcg.php");
                     exit();
                 } elseif ($rowConnexion[7] == "Chef de Service" || $rowConnexion[7] == "Employe de Service") {
-                    header("Location: http://localhost/stage-fullstack-PDO/src/chefdeservice/accueilcs.php");
+                    header("Location: http://localhost/GARAGE/src/chefdeservice/accueilcs.php");
                     exit();
                 } elseif ($rowConnexion[7] == "administrateur") {
-                    header("Location: http://localhost/stage-fullstack-PDO/src/bilangeneral.php");
+                    header("Location: http://localhost/GARAGE/src/bilangeneral.php");
                     exit();
                 }
             } else {

@@ -13,6 +13,7 @@ require '../../fonctions/message.php';
 <body>
     <form action="../chefdeservice/accueilcs.php" >
         <div class="container">
+            
             <section class="employe">
                 <div class="employe_infos" style="width: 20%;">
                     <h1> <?php echo $_SESSION['nom']  ?> </h1>

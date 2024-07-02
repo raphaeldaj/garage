@@ -1,6 +1,6 @@
 <?php  
 // require 'message.php';
-function supprimerEmploye($idEmploye) {
+function supprimerChauffeur($permis) {
    $host = "localhost"; 
    $user = "root"; 
    $passwd = ""; 
@@ -10,17 +10,17 @@ function supprimerEmploye($idEmploye) {
        $conn = new PDO("mysql:host=$host;dbname=$bdd", $user, $passwd);
        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-       $queryEmploye = "SELECT * FROM employe WHERE idEmploye = :idEmploye";
+       $queryEmploye = "SELECT * FROM chauffeur WHERE numeroPermis = :chauffeur";
        $stmt = $conn->prepare($queryEmploye);
-       $stmt->execute([':idEmploye' => $idEmploye]);
+       $stmt->execute([':chauffeur' => $permis]);
 
        if ($stmt->fetch(PDO::FETCH_NUM)) {
 
-           $queryRemove = "DELETE FROM employe WHERE idEmploye = :idEmploye";
+           $queryRemove = "DELETE FROM chauffeur WHERE numeroPermis = :chauffeur";
            $stmtRemove = $conn->prepare($queryRemove);
-           $stmtRemove->execute([':idEmploye' => $idEmploye]);
+           $stmtRemove->execute([':chauffeur' => $permis]);
        } else {
-           message("Cet Employe n'est pas enregistre verifier les informations entrees");
+           message("Ce chauffeur n'est pas enregistre verifier les informations entrees");
        }
     //    header("Location: http://localhost/GARAGE/src/gestiondesdonnees.php");
    } catch (PDOException $e) {
