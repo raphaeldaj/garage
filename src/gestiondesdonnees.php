@@ -6,8 +6,8 @@ require '../fonctions/message.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STATISTIQUES</title>
-    <link rel="stylesheet" href="../style/bilangeneral.css">
+    <title>GESTION DE DONNE</title>
+    <link rel="stylesheet" href="../style/gestiondesdonnees.css">
 </head>
 <body>
 
