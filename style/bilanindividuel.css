@@ -276,7 +276,7 @@ body{
     box-shadow: rgba(111, 167, 193, 0.878) 0px 30px 30px -20px;
     margin: 20px;
     position: relative;
-    top: 70px;
+    top: 0px;
     right: 0px;
     left: 0px;
   }
@@ -309,6 +309,30 @@ body{
     background-color: #d6d6d6;
     width: 102px;
     text-align: center;
+  }
+  .voir-detail{
+    /* display: block; */
+    /* width: 100%; */
+    font-weight: bold;
+    background: linear-gradient(45deg, rgb(16, 137, 211) 0%, rgb(18, 177, 209) 100%);
+    color: white;
+    /* padding-block: 15px; */
+    /* margin: 20px auto; */
+    /* border-radius: 20px; */
+    /* box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 20px 10px -15px; */
+    border: none;
+    transition: all 0.2s ease-in-out;
+  }
+  .voir-detail:hover {
+    transform: scale(1.03);
+    background: linear-gradient(45deg, rgb(0, 108, 175) 0%, rgb(16, 137, 211) 100%);
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 23px 10px -20px;
+  }
+  .kilometrage{
+    width: 30%;
+    position: absolute;
+    top: 68%;
+    left: 5%;
   }
   .voir-detail{
     /* display: block; */
