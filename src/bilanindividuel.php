@@ -6,7 +6,7 @@ require '../fonctions/message.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DK-7852-AS</title>
+    <title> BILAN INDIVIDUEL </title>
     <link rel="stylesheet" href="../style/bilanindividuel.css">
     <style>
      a{
