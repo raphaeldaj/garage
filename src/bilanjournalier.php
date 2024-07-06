@@ -9,46 +9,57 @@ require '../fonctions/message.php';
     <title>Document</title>
     <link rel="stylesheet" href="../style/bilanjournalier.css">
     <style>
-        .voir-detail{
-    /* display: block; */
-    /* width: 100%; */
-    font-weight: bold;
-    background: linear-gradient(45deg, rgb(16, 137, 211) 0%, rgb(18, 177, 209) 100%);
-    color: white;
-    /* padding-block: 15px; */
-    /* margin: 20px auto; */
-    /* border-radius: 20px; */
-    /* box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 20px 10px -15px; */
-    border: none;
-    transition: all 0.2s ease-in-out;
-  }
-  .service:hover{
-  animation : slide-left 1s forwards ;
+       a{
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+      }
+.button {
+ --glow-color: rgb(176, 217, 255);
+ --enhanced-glow-color: rgb(206, 235, 255);
+ --btn-color: rgb(255, 255, 255);
+ border: .20em solid var(--glow-color);
+ padding: 0.5em 1.5em;
+ color: var(--glow-color);
+ font-size: 15px;
+ font-weight: bold;
+ background-color: var(--btn-color);
+ border-radius: 1em;
+ outline: none;
+ box-shadow: 0 0 1em .5em var(--glow-color),
+        0 0 4em 1em var(--glow-spread-color),
+        inset 0 0 .5em .25em var(--glow-color);
+ text-shadow: 0 0 .5em var(--glow-color);
+ position: fixed;
+ top:10px;
+ transition: all 0.3s;
 }
-@keyframes slide-left {
-  0%
-  {
-    right: -200px;
-  }
-  100%
-  {
-    right: 0px;
-  }
-  
+
+button::after {
+ pointer-events: none;
+ content: "";
+ position: absolute;
+ top: 120%;
+ left: 0;
+ height: 100%;
+ width: 100%;
+ background-color: var(--glow-spread-color);
+ filter: blur(2em);
+ opacity: .7;
+ transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
 }
-.service:not(:hover){
-  animation : slide-right 1s forwards ;
+
+button:hover {
+ color: var(--btn-color);
+ background-color: var(--glow-color);
+ box-shadow: 0 0 1em .5em var(--glow-color),
+        0 0 4em 2em var(--glow-spread-color),
+        inset 0 0 .5em .5em var(--glow-color);
 }
-@keyframes slide-right {
-  0%
-  {
-    right: 0px;
-  }
-  100%
-  {
-    right: -200px;
-  }
-  
+
+button:active {
+ box-shadow: 0 0 0.6em .25em var(--glow-color),
+        0 0 2.5em 2em var(--glow-spread-color),
+        inset 0 0 .5em .25em var(--glow-color);
 }
     </style>
 </head>
@@ -115,7 +126,11 @@ require '../fonctions/message.php';
     <?php require '../fonctions/voirBilanJournalier.php';?>
     
   </form>
-  
+  <button class="button">
+        <a href="bilanindividuel.php">
+          Retour
+        </a>
+      </button>
   
 </body>
 </html>
