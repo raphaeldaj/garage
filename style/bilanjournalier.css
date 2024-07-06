@@ -104,3 +104,44 @@ form{
   }
   
 }
+.voir-detail{
+  /* display: block; */
+  /* width: 100%; */
+  font-weight: bold;
+  background: linear-gradient(45deg, rgb(16, 137, 211) 0%, rgb(18, 177, 209) 100%);
+  color: white;
+  /* padding-block: 15px; */
+  /* margin: 20px auto; */
+  /* border-radius: 20px; */
+  /* box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 20px 10px -15px; */
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+.service:hover{
+animation : slide-left 1s forwards ;
+}
+@keyframes slide-left {
+0%
+{
+  right: -200px;
+}
+100%
+{
+  right: 0px;
+}
+
+}
+.service:not(:hover){
+animation : slide-right 1s forwards ;
+}
+@keyframes slide-right {
+0%
+{
+  right: 0px;
+}
+100%
+{
+  right: -200px;
+}
+
+}
