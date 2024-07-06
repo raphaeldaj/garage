@@ -53,7 +53,7 @@ function VoirBilanVehicule($immatriculation){
             <td <?php if($rowRapport['controleTechnique']) { $controle_technique++; ?>                        style="background-color: rgba(255, 0, 0, 0.659);" <?php  if(!$intervetion){ $intervetion =true;} } ?>>controle technique</td>
             <td style="min-width:105px;"> <?php echo $rowRapport['montant'] ?> </td>
             <td style="background-color: #0099ff00;">
-              <form action="bilanjournalier.php">
+              <form action="bilanjournalier.php" method="post">
                 <div>
                   <input type="text" name="immatriculation" value="<?php echo $rowRapport['immatriculation'] ?>" style="position: absolute;width: 50px;height: 20px;opacity: 0;top: 5px;">
                   <input type="text" name="DATE" value="<?php echo $rowRapport['date'] ?>" style="position: absolute;width: 50px;height: 20px;opacity: 0;top: 5px;">
@@ -153,6 +153,12 @@ if($statAR!=0){
 }
 if($statCT!=0){
   $diviseur++;
+}
+if($diviseur==0){
+  $diviseur=1;
+}
+if($nombreDeVenu==0){
+  $nombreDeVenu=1;
 }
 $propostionIntervention=number_format( ( $nombreIntervention / $nombreDeVenu ) ,2);
 $moyenne = number_format( ( ($statEM+$statRM+$statDE+$statPn+$statCP+$statCl+$statAP+$statAR+$statCT) /$diviseur)*$propostionIntervention ,2);

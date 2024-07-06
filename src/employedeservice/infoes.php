@@ -19,7 +19,7 @@ require '../../fonctions/message.php';
 </head>
 <body>
     <div class="container">
-        <form action="services.php" methode="post" class="container">
+        <form action="services.php" method="post" class="container">
 
 
         <?php require '../../fonctions/afficherInfosVehicule.php';

@@ -12,7 +12,7 @@ require '../fonctions/message.php';
 <body>
     <div class="container" style="top:150px;">
 
-        <form action="accueil.php" class="form" methode="post">
+        <form action="accueil.php" class="form" method="post">
 
           <input required="" class="input" type="text" name="loggin"       placeholder="LOGGIN">
 

@@ -12,7 +12,7 @@ require '../../fonctions/message.php';
 </head>
 <body>
     <div class="container">
-        <form action="accueilcg.php" method="" class="container">
+        <form action="accueilcg.php" method="post" class="container">
 
         <?php require '../../fonctions/afficherInfosVehicule.php';
               require '../../fonctions/afficherInfosChauffeur.php';

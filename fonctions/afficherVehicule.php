@@ -31,7 +31,7 @@ function voiBilanVehicule() {
                       <td> <?php echo $rowInformation[1]  ?></td>
                       <td> <?php echo $rowInformation[2]  ?>  </td>
                       <td style="background-color: #0099ff00;">
-                          <form action="gestiondesdonnees.php">
+                          <form action="gestiondesdonnees.php" method="post">
                               <input type="text" name="immatriculation" value="<?php echo $rowInformation[0] ?>"  style="position: absolute;width: 50px;height: 20px;opacity: 0;top: 5px;">
                               <input type="submit" class="voir-detail" value="Supprimer" style="position: relative;width: 102px;height: 30px;border: 0;border-radius: 5px;">
                           </form>

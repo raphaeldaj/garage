@@ -15,7 +15,7 @@ require '../../fonctions/message.php';
 </head>
 <body>
     <div class="container" style="top: 200px;">
-        <form action="infocg.php" class="form" methode="post">
+        <form action="infocg.php" class="form" method="post">
           <input required="" class="input" type="text" name="immatriculation"  placeholder="Immatriculation de la Voiture">
           <input required="" class="input" type="text" name="permis"        placeholder="N° de Permis du Chauffeur">
           <input class="login-button" type="submit" value="valider">

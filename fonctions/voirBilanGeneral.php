@@ -31,7 +31,7 @@ function voiBilanGeneral() {
                       <td> <?php echo $rowStatistique[11]  ?>% </td>
                       <td> <?php echo $rowStatistique[12]  ?>  </td>
                       <td style="background-color: #0099ff00;">
-                          <form action="bilanindividuel.php">
+                          <form action="bilanindividuel.php" method="post">
                               <input type="text" name="immatriculation" value="<?php echo $rowStatistique[1] ?>"  style="position: absolute;width: 50px;height: 20px;opacity: 0;top: 5px;">
                               <input type="submit" class="voir-detail" value="voir-detail" style="position: relative;width: 102px;height: 30px;border: 0;border-radius: 5px;">
                           </form>

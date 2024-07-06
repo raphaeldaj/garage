@@ -8,7 +8,7 @@ function message($message){
 </div>
     <style>
       .message-container{
-        animation: message 10s;
+        animation: message 15s;
       }
       @keyframes message {
         0%{
@@ -18,7 +18,13 @@ function message($message){
           bottom :40%;
 
         }
-        75%{
+        50%{
+          opacity: 1;
+          left :0px ;
+          right: 0px;
+          bottom :40%;
+        }
+        95%{
           opacity: 1;
           left :0px ;
           right: 0px;

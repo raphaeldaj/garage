@@ -104,7 +104,7 @@ button:active {
 
           <div class="carte-grise-container" style="top: 100px;border-radius: 40px;">
             <div class="heading">Nouveau VEHICULE</div>
-            <form action="bilangeneral.php" class="div">
+            <form action="bilangeneral.php" class="div" method="post">
               <div style="width: 20%;position: absolute;top: 12%;left: 5%;"><p>N°immatriculation</p></div>
               <input  class="N°immatriculation"            type="text"      name="immatriculation"             placeholder="N°immatriculation"    required="">
               <div style="width: 30%;position: absolute;top: 12%;left: 35%;"><p>date 1er mise en circulation</p></div>
@@ -143,21 +143,21 @@ button:active {
 
           <div class="permis-container" style="top : 150px;">
               <div class="heading"> PERMIS DE CONDUIRE </div>
-              <div action="rapport.php" class="div">
+              <form action="bilangeneral.php" class="div" method="post">
                   <div style="width: 20%;position: absolute;top: 12%;left: 5%;"><p>N° Permis</p></div>
                   <input class="N°immatriculation"            type="text" name="numeroPermis"              placeholder="N° Permis"                 value="" >
                   <div style="width: 30%;position: absolute;top: 12%;left: 35%;"><p>date d'Emission</p></div>
-                  <input class="date-1er-mise-en-circulation" type="text" name="dateEmission"              placeholder="date d'Emission"           value="" >
+                  <input class="date-1er-mise-en-circulation" type="date" name="dateEmission"              placeholder="date d'Emission"           value="" >
                   <div style="width: 25%;position: absolute;top: 12%;left: 67%;"><p>date d'Expiration</p></div>
-                  <input class="date-immatriculation"         type="text" name="dateExpiration"            placeholder="date d'Expiration"         value="" >
+                  <input class="date-immatriculation"         type="date" name="dateExpiration"            placeholder="date d'Expiration"         value="" >
                   <div style="width: 20%;position: absolute;top: 27%;left: 5%;"><p>Nom</p></div>
                   <input class="N°titulaire"                  type="text" name="nomChauffeur"              placeholder="Nom"                       value="" >
                   <div style="width: 40%;position: absolute;top: 27%;left: 35%;"><p>Prenom</p></div>
                   <input class="titulaire"                    type="text" name="prenomChauffeur"           placeholder="Prenom"                    value="" >
                   <div style="width: 30%;position: absolute;top: 42%;left: 5%;"><p>date de Naissance</p></div>
-                  <input class="N°immat-precedante"           type="text" name="immatriculationPrecedente" placeholder="date de Naissance"         value="" >
+                  <input class="N°immat-precedante"           type="date" name="dateNaissanceChauffeur"    placeholder="date de Naissance"         value="" >
                   <div style="width: 30%;position: absolute;top: 42%;left: 45%;"><p>lieu de Naissance</p></div>
-                  <input class="adresse-commune"              type="text" name="dateNaissance"             placeholder="lieu de Naissance"         value="" >
+                  <input class="adresse-commune"              type="text" name="lieuNaissancechauffeur"    placeholder="lieu de Naissance"         value="" >
                   <div style="width: 30%;position: absolute;top: 60%;left: 5%;"><p>delivre par</p></div>
                   <input class="kilometrage"                  type="text" name="delivrePar"                placeholder="delivre Par"               value="" >
                   <div style="width: 30%;position: absolute;top: 60%;left: 35%;"><p>groupe sanguin</p></div>
@@ -165,7 +165,7 @@ button:active {
                   <div style="width: 10%;position: absolute;top: 60%;left: 65%;"><p>cathegorie</p></div>
                   <input class="origine"                      type="text" name="cathegorie"                placeholder="cathegorie"                value=""  style="top :68% ;">
                   <input type="submit" value="enregistrer" style="width: 100px;bottom: 3%;left: 5%;text-align: center;" class="traiter">
-              </div>
+              </form>
           </div>
 
         </div>
@@ -176,7 +176,7 @@ button:active {
 
           <div class="carte-perso-container" style="top: 25px;border-radius: 40px; align-items: center;background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(244, 247, 251) 100%);height: 600px;">
             <div class="heading"> Nouvel Employe </div>
-            <form action="bilangeneral.php" class="div"  style="display: flex ; flex-direction: column; align-items: center;width: 100%;height: 80%;left: 10%;">
+            <form action="bilangeneral.php" class="div" method="post"  style="display: flex ; flex-direction: column; align-items: center;width: 100%;height: 80%;left: 10%;">
               <input required=""   type="text"   name="nom"        placeholder="NOM"             style="width: 80%;position: relative;text-align: center;">
               <input required=""   type="text"   name="prenom"     placeholder="PRENOM"          style="width: 80%;position: relative;text-align: center;">
               <input required=""   type="text"   name="adresse"    placeholder="ADRESSE"         style="width: 80%;position: relative;text-align: center;">
@@ -236,7 +236,9 @@ button:active {
 <?php  
 require '../fonctions/inscrireemploye.php';
 require '../fonctions/inscrirevehicule.php';
+require '../fonctions/inscrirechauffeur.php';
 if(!empty($_REQUEST['immatriculation'])){inscrireVehicule($_REQUEST['immatriculation'],$_REQUEST['premiereMiseEnCirculation'],$_REQUEST['dateImmatriculation'],$_REQUEST['numeroTitulaire'],$_REQUEST['titulaire'],$_REQUEST['immatriculationPrecedente'],$_REQUEST['adresseCommune'],$_REQUEST['regionDepartement'],$_REQUEST['marque'],$_REQUEST['modele'],$_REQUEST['origine'],$_REQUEST['anneeFabrication'],$_REQUEST['kilometrage']);}
 if(!empty($_REQUEST['loggin'])){inscrireEmploye($_REQUEST['nom'],$_REQUEST['prenom'],$_REQUEST['email'],$_REQUEST['telephone'],$_REQUEST['adresse'],$_REQUEST['service'],$_REQUEST['poste'],$_REQUEST['loggin'],$_REQUEST['motDePasse']);}
+if(!empty($_REQUEST['numeroPermis'])){inscrireChauffeur($_REQUEST['numeroPermis'],$_REQUEST['nomChauffeur'],$_REQUEST['prenomChauffeur'],$_REQUEST['dateNaissanceChauffeur'],$_REQUEST['lieuNaissancechauffeur'],$_REQUEST['dateEmission'],$_REQUEST['dateExpiration'],$_REQUEST['delivrePar'],$_REQUEST['cathegorie'],$_REQUEST['groupeSanguin']);}
 
 ?>
