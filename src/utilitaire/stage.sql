@@ -199,11 +199,11 @@ INSERT INTO chauffeur VALUES ('0000000002','SOW','Ousmane','00-00-2000','quelque
 
 
 INSERT INTO vehicule VALUES ('AA-947-ZZ','14-10-2002','05-07-2002','2000789463','Ndonguo FALL','UI-2249-D','quelque part','quelque part','Toyota','Avensis','Dakar','2007',37);
-INSERT INTO vehicule VALUES ('BB-947-YY','04-10-2002','15-08-2002','2150789463','Ndonguo FALL','VJ-2249-E','quelque part','quelque part','Toyota','Avensis','Dakar','2007',45);
-INSERT INTO vehicule VALUES ('CC-947-XX','20-10-2002','28-09-2002','2007689463','Ndonguo FALL','WK-2249-F','quelque part','quelque part','Toyota','Avensis','Dakar','2007',20);
-INSERT INTO vehicule VALUES ('DD-947-WW','24-10-2002','20-09-2002','2091689463','Ndonguo FALL','XL-2249-G','quelque part','quelque part','Toyota','Avensis','Dakar','2007',18);
-INSERT INTO vehicule VALUES ('EE-947-VV','21-10-2002','18-08-2002','2091726463','Ndonguo FALL','YM-2249-H','quelque part','quelque part','Toyota','Avensis','Dakar','2007',50);
-INSERT INTO vehicule VALUES ('FF-947-UU','30-10-2002','12-07-2002','2091179463','Ndonguo FALL','ZN-2249-I','quelque part','quelque part','Toyota','Avensis','Dakar','2007',12);
+INSERT INTO vehicule VALUES ('BB-495-YY','04-10-2002','15-08-2002','2150789463','Ndonguo FALL','VJ-2249-E','quelque part','quelque part','Toyota','Avensis','Dakar','2007',45);
+INSERT INTO vehicule VALUES ('CC-498-XX','20-10-2002','28-09-2002','2007689463','Ndonguo FALL','WK-2249-F','quelque part','quelque part','Toyota','Avensis','Dakar','2007',20);
+INSERT INTO vehicule VALUES ('DD-229-WW','24-10-2002','20-09-2002','2091689463','Ndonguo FALL','XL-2249-G','quelque part','quelque part','Toyota','Avensis','Dakar','2007',18);
+INSERT INTO vehicule VALUES ('EE-198-VV','21-10-2002','18-08-2002','2091726463','Ndonguo FALL','YM-2249-H','quelque part','quelque part','Toyota','Avensis','Dakar','2007',50);
+INSERT INTO vehicule VALUES ('FF-843-UU','30-10-2002','12-07-2002','2091179463','Ndonguo FALL','ZN-2249-I','quelque part','quelque part','Toyota','Avensis','Dakar','2007',12);
 
 
 INSERT INTO `employe`  VALUES ('0000000000', 'Raphael', 'DIOP', 'raphaeldiop@employe.com', '+221 79 444 55 66', 'somewhere', 'administration', 'administrateur', 'raphael', 'passer');
