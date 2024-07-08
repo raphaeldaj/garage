@@ -10,7 +10,7 @@ function voiBilanGeneral() {
       $conn = new PDO("mysql:host=$host;dbname=$bdd", $user, $passwd);
       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-      $query = "SELECT * FROM statistiques"; 
+      $query = "SELECT * FROM statistiques ORDER BY immatriculation"; 
       $stmt = $conn->query($query);
 
       while ($rowStatistique = $stmt->fetch(PDO::FETCH_NUM)) {
