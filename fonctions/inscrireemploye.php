@@ -40,10 +40,6 @@ function inscrireEmploye($nom, $prenom, $email, $telephone, $adresse, $service, 
         message("Erreur : " . $e->getMessage());
     }
 }
-
-
-
-
 ?>
 
 
