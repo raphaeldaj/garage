@@ -90,11 +90,11 @@ include "../../fonctions/enregistrerPiece.php";
                     if ($etatTraitement == "terminer") {
                         $timestampDans21Jours = strtotime('+21 days');
                         $dateDans21Jours = date('d-m-Y', $timestampDans21Jours);
-                        
+                        $datedujour = date('d-m-Y');
                         $queryDelete = "DELETE FROM journee WHERE immatriculation = :immatriculation AND date >= :dateDebut AND date <= :dateFin";
                         $stmtDelete = $pdo->prepare($queryDelete);
                         $stmtDelete->bindParam(':immatriculation', $immatriculation, PDO::PARAM_STR);
-                        $stmtDelete->bindParam(':dateDebut', date('d-m-Y'), PDO::PARAM_STR);
+                        $stmtDelete->bindParam(':dateDebut', $datedujour, PDO::PARAM_STR);
                         $stmtDelete->bindParam(':dateFin', $dateDans21Jours, PDO::PARAM_STR);
                         $stmtDelete->execute();
                     }

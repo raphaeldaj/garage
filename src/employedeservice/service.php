@@ -1,5 +1,10 @@
 <?php session_start();
-$_SESSION['chauffeur']=$_REQUEST['chauffeurActuel'];
+if(!empty($_REQUEST['chauffeurActuel'])){
+    $_SESSION['chauffeur']=$_REQUEST['chauffeurActuel'];
+}
+if(!empty($_REQUEST['immatriculation'])){
+    $_SESSION['immatriculation']=$_REQUEST['immatriculation'];
+}
 require '../../fonctions/message.php'; 
 ?>
 <!DOCTYPE html>
@@ -89,7 +94,7 @@ require '../../fonctions/message.php';
             
         <section class="bilan">
             <div style="width: 25%;margin: 5px;height: 60px;">
-                    <input class="input"  type="text" name="immatriculation"  value="<?php echo $_REQUEST['immatriculation']?>" >
+                    <input class="input"  type="text" name="immatriculation"  value="<?php echo $_SESSION['immatriculation']?>" >
             </div>
             <div style="width: 25%;margin: 5px;height: 60px;display: flex;flex-direction: row;justify-content: space-around ; ">
                  
@@ -99,33 +104,31 @@ require '../../fonctions/message.php';
             <div style="width: 25%;margin: 5px;height: 60px;display: flex;flex-direction: row;justify-content: space-around ;">
                 <input class="valid-button"  type="submit" value="valider"  name="etat_traitement" style="width: 49%;">
                 <input class="valid-button"  type="submit" value="terminer"  name="etat_traitement" style="width: 49%;">
+                <input type="number" name="counter" value="<?php if(!empty($max)){ echo $max;} else {echo 2;} ?>" style="width: 49%; opacity:1;position:fixed;left:-50000px;" >
             </div>
         </section>
             
             
-        <section class="bilan">
-            <div style="width: 25%;margin: 5px;height: 60px;">
-                
-            </div>
-                 
-            <div style="width: 25%;margin: 5px;height: 60px;">
-               
-            </div>
-            <div style="width: 25%;margin: 5px;height: 60px;">
-               
-            </div>
-            <div style="width: 25%;margin: 5px;height: 60px;display: flex;flex-direction: row;justify-content: space-around ; ">
-                 <form action="service.php" style="width:100%;height:100%;">
-                    <input type="number" name="counter" value="<?php if(!empty($max)){ echo $max;} else {echo 2;} ?>" style="width: 49%; opacity:1;position:fixed;left:-50000px;" >
-                    <input class="ajouter"  type="submit" value="ajouter piece" name="etat_traitement"   style="width: 49%;">
-                 </form>
-            </div>
-        </section>
-        </div>
-    </form>
-    <div class="container">
+    </div>
+</form>
+<section class="bilan">
+    <div style="width: 25%;margin: 5px;height: 60px;">
         
     </div>
+         
+    <div style="width: 25%;margin: 5px;height: 60px;">
+       
+    </div>
+    <div style="width: 25%;margin: 5px;height: 60px;">
+       
+    </div>
+    <div style="width: 25%;margin: 5px;height: 60px;display: flex;flex-direction: row;justify-content: space-around ; ">
+         <form action="service.php" style="width:100%;height:100%;">
+         <input type="number" name="counter" value="<?php if(!empty($max)){ echo $max;} else {echo 2;} ?>" style="width: 49%; opacity:1;position:fixed;left:-50000px;" >
+            <input class="ajouter"  type="submit" value="ajouter piece" name="etat_traitement"   style="width: 49%;">
+         </form>
+    </div>
+</section>
     <script>
         
     </script>

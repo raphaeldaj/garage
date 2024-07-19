@@ -12,7 +12,7 @@ function initialiserRapport($immatriculation, $numeroPermis, $idEmploye) {
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         
-        $date = date('Y-m-d');
+        $date = date('d-m-Y');
         $queryVerification = "SELECT * FROM rapport WHERE immatriculation = :immatriculation AND date = :date";
         $stmt = $pdo->prepare($queryVerification);
         $stmt->bindParam(':immatriculation', $immatriculation, PDO::PARAM_STR);

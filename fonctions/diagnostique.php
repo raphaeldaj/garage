@@ -49,7 +49,7 @@ if (!empty($_REQUEST['etat'])) {
         $timestampDans22Jours = strtotime('+22 days');
         $dateDans22Jours = date('d-m-Y', $timestampDans22Jours);
 
-        $queryProgrammation = "INSERT INTO Journee (immatriculation, premiereMiseEnCirculation, dateImmatriculation, numeroTitulaire, titulaire, immatriculationPrecedente, adresseCommune, regionDepartement, marque, model, origine, anneeFabrication, kilometrage, date, clefprimaire) VALUES (:immatriculation, :premiereMiseEnCirculation, :dateImmatriculation, :numeroTitulaire, :titulaire, :immatriculationPrecedente, :adresseCommune, :regionDepartement, :marque, :model, :origine, :anneeFabrication, :kilometrage, :date, :clefprimaire)";
+        $queryProgrammation = "INSERT INTO Journee (immatriculation, premiereMiseEnCirculation, dateImmatriculation, numeroTitulaire, titulaire, immatriculationPrecedente, adresseCommune, regionDepartement, marque, model, origine, anneeFabrication, kilometrage, date, clefprimaire,numeroPermis) VALUES (:immatriculation, :premiereMiseEnCirculation, :dateImmatriculation, :numeroTitulaire, :titulaire, :immatriculationPrecedente, :adresseCommune, :regionDepartement, :marque, :model, :origine, :anneeFabrication, :kilometrage, :date, :clefprimaire, :numeroPermis)";
         $stmt = $conn->prepare($queryProgrammation);
         $stmt->execute([
             ':immatriculation' => $_REQUEST['immatriculation'],
